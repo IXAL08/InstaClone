@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:insta/formulario.dart';
 import 'home_page.dart';
-
+import 'contador.dart';
+import 'formulario.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -19,14 +21,15 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(elevation: 1,color: Colors.white),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        scaffoldBackgroundColor: Colors.black
+        scaffoldBackgroundColor: Colors.transparent,
+
       ),
-      home: MyHomePage(),
+      home: Formulario(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+/*class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -93,4 +96,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
+}*/

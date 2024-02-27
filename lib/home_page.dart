@@ -10,6 +10,7 @@ class _HomePageState extends State<HomePage>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: Image.asset("Media/images/Instagram_logo.png",height: 40,),
         backgroundColor: Colors.black,
