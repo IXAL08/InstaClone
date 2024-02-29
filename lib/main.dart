@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:insta/formulario.dart';
 import 'home_page.dart';
 import 'contador.dart';
 import 'formulario.dart';
+import 'facebook_login.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.transparent,
 
       ),
-      home: Formulario(),
+      home: Login(),
     );
   }
 }
