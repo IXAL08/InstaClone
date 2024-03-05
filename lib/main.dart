@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:insta/examen.dart';
 import 'home_page.dart';
 import 'contador.dart';
 import 'formulario.dart';
 import 'facebook_login.dart';
+import 'examen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.transparent,
 
       ),
-      home: Login(),
+      home: Cinepolis(),
     );
   }
 }

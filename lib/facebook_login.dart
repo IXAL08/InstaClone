@@ -6,6 +6,43 @@ class Login extends StatefulWidget{
 }
 
 class _LoginState extends State<Login>{
+
+  final c_usuario = TextEditingController();
+  final c_password = TextEditingController();
+
+  String usuario = "";
+  String pass = "";
+
+  validar(usuario,pass){
+    if(usuario == null || pass == null){
+      alerta("Debe llenar todos los campos");
+    }
+    else if(usuario == "host" && pass == "123"){
+      alerta("Bienvenido");
+    }
+    else{
+      alerta("Usuario o contraseña incorrecta");
+    }
+  }
+
+  alerta(mensaje){
+    showDialog(barrierDismissible: false,context: context, builder: (BuildContext context){
+      return AlertDialog(
+        title: Text("Facebook login"),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: [
+              Text(mensaje)
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("Aceptar"))
+        ],
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context){
     return Container(
@@ -36,6 +73,8 @@ class _LoginState extends State<Login>{
               child: SizedBox(
                 width: 390,
                 child: TextField(
+                  controller: c_usuario,
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     hintText: "Mobile number o email address",
                     hintStyle: TextStyle(color: Colors.grey[700]),
@@ -55,6 +94,8 @@ class _LoginState extends State<Login>{
                 child: SizedBox(
                   width: 390,
                   child: TextField(
+                    controller: c_password,
+                    style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Password",
                       hintStyle: TextStyle(color: Colors.grey[700]),
@@ -72,7 +113,12 @@ class _LoginState extends State<Login>{
             Padding(
               padding: const EdgeInsets.all(14),
               child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    usuario = c_usuario.text;
+                    pass = c_password.text;
+
+                    validar(usuario,pass);
+                  },
                   child: Text("Log In",style: TextStyle(color: Colors.white),),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent
